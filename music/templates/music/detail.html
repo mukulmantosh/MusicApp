@@ -1,0 +1,54 @@
+{%  extends 'layouts.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+
+<h3>{{album.album_title}}</h3>
+<div class="row">
+	<div class="col s4 m4 l4">
+	  <div class="card z-depth-3">
+	    <div class="card-image">
+	      <img src="{{album.album_logo}}">           
+	    </div> 
+	  </div>
+	</div>
+
+	<div class="col l8">
+	 <h3 class="flow-text">{{album.artist}}</h3>
+
+	
+	
+	
+
+	<table class="bordered">       
+        <tbody>
+        {% for song in album.song_set.all %}
+          <tr>
+            <td class="green-text"><strong>{{song.song_title}}</strong></td>
+            <td>
+            <div class="chip">
+  		 		{{song.file_type}}    			
+  			</div>
+  			</td>
+            <td>
+            <audio controls>			 
+			  <source src="{{song.song_url}}" type="audio/mpeg">
+			Your browser does not support the audio element.
+			</audio>
+			</td>
+          </tr>
+         {% endfor %} 
+        </tbody>
+      </table>
+
+      </div>
+	
+ </div><!--end of row-->
+
+</div><!--end of container-->
+
+
+
+{% endblock %}

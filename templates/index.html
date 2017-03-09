@@ -1,0 +1,29 @@
+{%  extends 'layouts.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<div class="row center">
+<h5 class="header col s12 light">One good thing about music, when it hits you, you feel no pain.</h5><br>
+<div class="row">
+<div class="col s4">
+	<img src="https://d13yacurqjgara.cloudfront.net/users/2081/screenshots/2901028/castro_2.gif" class="responsive-img">
+</div>
+<div class="col s4">
+	<img src="{% static 'images/sing.png' %}" class="responsive-img">
+</div>
+<div class="col s4">
+	<img src="https://d13yacurqjgara.cloudfront.net/users/51395/screenshots/1353765/audioplayer01.gif" class="responsive-img">
+</div>
+</div>
+</div>
+
+  <div class="row center">
+   <a href="/music" class="btn-large waves-effect waves-light light-blue">EXPLORE MUSIC</a>
+  </div>
+ <br><br>
+
+
+{% endblock %}
