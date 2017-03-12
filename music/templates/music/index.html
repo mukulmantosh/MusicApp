@@ -13,29 +13,37 @@
 	 -->
 
 
- <div class="row">
+<div class="row">
+
 {% for album in object_list  %}
 
-        <div class="col s3 m3 l3">
-          <div class="card z-depth-3">
-            <div class="card-image">
-              <img src="{{album.album_logo}}">           
-            </div>           
-            <div class="card-action">
-             <center><a  class="waves-effect waves-light btn light-blue darken-4" href="{% url 'music:detail' album.id %}">{{album.album_title}}</a></center>
-            </div>
-          </div>
+        <div class="col l3">
+              <a href="{% url 'music:detail' album.id %}">
+                  <img src="{{album.album_logo}}" class="responsive-img">  
+              </a>   
+
+               <a class="btn waves-effect waves-light  green accent-4" href="{% url 'music:album-update' album.id %}">
+               EDIT
+               </a>   
+
+
+               <form class="col s8" action="{% url 'music:album-delete' album.id %}" method="post">
+    			
+    			{% csrf_token %}
+    				<input type="hidden" name="album_id" value="{{album.id}}">
+				   <center><button class="center-align btn waves-effect waves-light" type="submit" name="action">DELETE		    		
+			  	   </button> 
+			  	   </center>
+    			</form>
+
+
         </div>
+
 {% endfor %}  
-      </div><!--end of row-->
+
+</div><!--end of row-->
 
 
-	
-
-
-     
-    
-		
       
 
    
