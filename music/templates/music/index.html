@@ -12,7 +12,9 @@
 
 	 -->
 
-
+<center>{% if request.user.is_authenticated %}<h3 class="flow-text"><strong>Welcome {{ request.user.username }}</strong> || <a href="{% url 'music:logout' %}">LOGOUT</a></h3>
+{% else %}<a href="{% url 'music:login' %}"><h3 class="flow-text"><strong><span class="grey-text darken-3">LOGIN</span></strong></h3></a>{% endif %}
+</center>
 <div class="row">
 
 {% for album in object_list  %}

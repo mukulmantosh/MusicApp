@@ -1,0 +1,23 @@
+{%  extends 'layouts.html' %}
+{% load static %}
+
+{% block content %}
+<p class="red-text flow-text center-align">LOGIN</p>
+ <div class="row">
+<div class="col m4"></div>
+    <form class="col s8" action="" method="post">
+    {% csrf_token %}
+
+    {% include 'music/form-template.html' %}
+
+
+	   <button class="btn waves-effect waves-light light-blue accent-4" type="submit" name="action">LOGIN
+    
+  </button> 
+    </form>
+  </div>
+
+  <div class="col m4"></div>
+        
+
+{% endblock %}
