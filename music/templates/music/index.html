@@ -19,7 +19,7 @@
 
         <div class="col l3">
               <a href="{% url 'music:detail' album.id %}">
-                  <img src="{{album.album_logo}}" class="responsive-img">  
+                  <img src="{{album.album_logo.url}}" class="responsive-img">  
               </a>   
 
                <a class="btn waves-effect waves-light  green accent-4" href="{% url 'music:album-update' album.id %}">
